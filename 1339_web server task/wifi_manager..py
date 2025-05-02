@@ -3,6 +3,7 @@ import time
 
 def connect_to_wifi(ssid, password, timeout=10):
     sta = network.WLAN(network.STA_IF)
+    sta.active(False)
     sta.active(True)
     if not sta.isconnected():
         print(f"Connecting to WiFi: {ssid} ...")
